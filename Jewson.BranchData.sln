@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewson.BranchData.WebApi.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApp", "MvcApp\MvcApp.csproj", "{ED1D6E46-035B-44CC-81C6-6BC784ABC17A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApp.Tests", "MvcApp.Tests\MvcApp.Tests.csproj", "{20DE2356-1A5E-4537-A87A-778A522A5AED}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{ED1D6E46-035B-44CC-81C6-6BC784ABC17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED1D6E46-035B-44CC-81C6-6BC784ABC17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED1D6E46-035B-44CC-81C6-6BC784ABC17A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20DE2356-1A5E-4537-A87A-778A522A5AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20DE2356-1A5E-4537-A87A-778A522A5AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20DE2356-1A5E-4537-A87A-778A522A5AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20DE2356-1A5E-4537-A87A-778A522A5AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
