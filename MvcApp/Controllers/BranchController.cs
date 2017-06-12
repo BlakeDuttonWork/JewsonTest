@@ -21,7 +21,24 @@ namespace MvcApp.Controllers
         }
 
         // GET: Branch/Details/101
-        public async Task<ActionResult> Details(int Number)
+        public async Task<ActionResult> Details(int id)
+        {
+            Branch branch = await GetBranchAsync(id);
+
+            if (branch == null)
+            {
+                return View("NotFound");
+            }
+
+            return View(branch);
+        }
+
+        public async Task<PartialViewResult> DetailsPartial(int id)
+        {
+            return PartialView("_BranchDetails", await GetBranchAsync(id));
+        }
+
+        private async Task<Branch> GetBranchAsync(int branchId)
         {
             Branch branch = null;
 
@@ -32,7 +49,7 @@ namespace MvcApp.Controllers
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync($"api/branch/{Number}");
+                HttpResponseMessage response = await client.GetAsync($"api/branch/{branchId}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -42,12 +59,7 @@ namespace MvcApp.Controllers
                 }
             }
 
-            if (branch == null)
-            {
-                return View("NotFound");
-            }
-
-            return View(branch);
+            return branch;
         }
     }
 }

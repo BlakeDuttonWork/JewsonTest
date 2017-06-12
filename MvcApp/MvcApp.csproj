@@ -187,6 +187,7 @@
     <Content Include="Views\Branch\Details.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Branch\Search.cshtml" />
+    <Content Include="Views\Branch\_BranchDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

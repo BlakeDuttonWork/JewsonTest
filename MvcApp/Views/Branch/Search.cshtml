@@ -6,9 +6,35 @@
 
 <h2>Search for your Jewson branch</h2>
 
+
+@*
 @using (Html.BeginForm("Details", "Branch"))
 {
-    @Html.TextBoxFor(model => model.Number, new { name = "id" })
+    @Html.TextBoxFor(model => model.Number)
     @Html.ValidationMessageFor(model => model.Number)
     <button type="submit">Search</button>
+}
+*@
+
+
+@Html.TextBoxFor(model => model.Number)
+@Html.ValidationMessageFor(model => model.Number)
+<button class="use-ajax">Search</button>
+
+
+<div id="branchData"></div>
+
+<div id="dvBranchResult">
+    @{Html.RenderPartial("_BranchDetails", Model);}
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on("click", ".use-ajax", function (e) {
+                var branchNumber = $("#Number").val();
+                $("#dvBranchResult").load('@(Url.Action("DetailsPartial", "Branch",null, Request.Url.Scheme))?id=' + branchNumber);
+            });
+        });
+    </script>
 }
