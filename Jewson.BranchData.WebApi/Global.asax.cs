@@ -11,6 +11,7 @@ namespace Jewson.BranchData.WebApi
     {
         protected void Application_Start()
         {
+            UnityConfig.RegisterComponents(); // Register Unity for Dependency Injection
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
