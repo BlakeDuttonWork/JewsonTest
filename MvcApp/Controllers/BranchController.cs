@@ -15,8 +15,13 @@ namespace MvcApp.Controllers
     {
         private string BaseUrl = "http://jewsonbranchdatawebapp.azurewebsites.net/";
 
+        public ActionResult Search()
+        {
+            return View();
+        }
+
         // GET: Branch/Details/101
-        public async Task<ActionResult> Details(int id)
+        public async Task<ActionResult> Details(int Number)
         {
             Branch branch = null;
 
@@ -27,7 +32,7 @@ namespace MvcApp.Controllers
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync($"api/branch/{id}");
+                HttpResponseMessage response = await client.GetAsync($"api/branch/{Number}");
 
                 if (response.IsSuccessStatusCode)
                 {

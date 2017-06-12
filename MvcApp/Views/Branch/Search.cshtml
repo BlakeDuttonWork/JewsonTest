@@ -1,0 +1,14 @@
+﻿@model Jewson.BranchData.WebApi.Models.Branch
+    
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search for your Jewson branch</h2>
+
+@using (Html.BeginForm("Details", "Branch"))
+{
+    @Html.TextBoxFor(model => model.Number, new { name = "id" })
+    @Html.ValidationMessageFor(model => model.Number)
+    <button type="submit">Search</button>
+}
