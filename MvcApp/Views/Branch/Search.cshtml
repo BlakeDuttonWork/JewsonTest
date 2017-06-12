@@ -6,23 +6,20 @@
 
 <h2>Search for your Jewson branch</h2>
 
-
-@*
-@using (Html.BeginForm("Details", "Branch"))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "branchForm" }))
 {
-    @Html.TextBoxFor(model => model.Number)
-    @Html.ValidationMessageFor(model => model.Number)
-    <button type="submit">Search</button>
+    <div>
+        @Html.TextBoxFor(model => model.Number)
+        <br />
+        @Html.ValidationMessageFor(model => model.Number)
+    </div>
 }
-*@
+<br />
+<div>
+    <button class="use-ajax">Search</button>
+</div>
 
-
-@Html.TextBoxFor(model => model.Number)
-@Html.ValidationMessageFor(model => model.Number)
-<button class="use-ajax">Search</button>
-
-
-<div id="branchData"></div>
+<br />
 
 <div id="dvBranchResult">
     @{Html.RenderPartial("_BranchDetails", Model);}
@@ -32,6 +29,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(document).on("click", ".use-ajax", function (e) {
+                var isValid = $("#branchForm").validate().form();
+                if (!isValid) return false;
+
+                var branchNumber = $("#Number").val();
+                $("#dvBranchResult").load('@(Url.Action("DetailsPartial", "Branch",null, Request.Url.Scheme))?id=' + branchNumber);
+            });
+
+            $('#branchForm').on('submit', function (e) {
+                e.preventDefault();
                 var branchNumber = $("#Number").val();
                 $("#dvBranchResult").load('@(Url.Action("DetailsPartial", "Branch",null, Request.Url.Scheme))?id=' + branchNumber);
             });

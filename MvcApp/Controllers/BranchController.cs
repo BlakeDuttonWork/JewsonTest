@@ -35,6 +35,7 @@ namespace MvcApp.Controllers
 
         public async Task<PartialViewResult> DetailsPartial(int id)
         {
+            ViewBag.hasSearched = true;
             return PartialView("_BranchDetails", await GetBranchAsync(id));
         }
 
