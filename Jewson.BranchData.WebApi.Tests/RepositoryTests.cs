@@ -10,7 +10,7 @@ namespace Jewson.BranchData.WebApi.Tests
     public class RepositoryTests
     {
         [TestMethod]
-        public void GetAll_OK()
+        public void BranchRepository_GetAll_OK()
         {
             // Arrange
             TestJsonDataService json = new TestJsonDataService();
@@ -25,7 +25,7 @@ namespace Jewson.BranchData.WebApi.Tests
         }
 
         [TestMethod]
-        public void GetBranchByNumber_OK()
+        public void BranchRepository_GetBranchByNumber_OK()
         {
             // Arrange
             TestJsonDataService json = new TestJsonDataService();
@@ -42,7 +42,7 @@ namespace Jewson.BranchData.WebApi.Tests
         }
 
         [TestMethod]
-        public void GetBranchByNumber_NotFound()
+        public void BranchRepository_GetBranchByNumber_NotFound()
         {
             // Arrange
             TestJsonDataService json = new TestJsonDataService();
