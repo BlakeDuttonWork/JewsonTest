@@ -18,7 +18,7 @@ namespace MvcApp.Controllers
         // GET: Branch/Details/101
         public async Task<ActionResult> Details(int id)
         {
-            Branch branch = new Branch();
+            Branch branch = null;
 
             using (var client = new HttpClient())
             {
@@ -35,6 +35,11 @@ namespace MvcApp.Controllers
 
                     branch = JsonConvert.DeserializeObject<Branch>(branchJson);
                 }
+            }
+
+            if (branch == null)
+            {
+                return View("NotFound");
             }
 
             return View(branch);
