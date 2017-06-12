@@ -16,7 +16,8 @@ namespace Jewson.BranchData.WebApi
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IJsonDataService, JsonDataService>();
-            
+            container.RegisterType<IBranchRepository, BranchRepository>(new ContainerControlledLifetimeManager());
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
