@@ -1,0 +1,154 @@
+﻿@model Jewson.BranchData.WebApi.Models.Branch
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Branch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Town)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BranchManager)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BranchManager)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHoursWeekend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHoursWeekend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHoursMonToFri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHoursMonToFri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHoursWeekend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHoursWeekend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHoursMonToFri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHoursMonToFri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHoursWeekDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHoursWeekDay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Number }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
